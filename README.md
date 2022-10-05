@@ -6,4 +6,4 @@
 |Eu como aluno preciso consultar meu extrato completo|
 |Eu como professor preciso consultar meu extrato completo|
 |Eu como empresa desejo cadastrar minhas vantagens para o programa de moedas|
-|Eu como aluno desejo resgatar vantagens com minhas modas|
+|Eu como aluno desejo resgatar vantagens com minhas moedas|
