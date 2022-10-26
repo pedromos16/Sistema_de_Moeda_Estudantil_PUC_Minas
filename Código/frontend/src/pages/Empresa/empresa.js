@@ -24,6 +24,7 @@ function Empresa() {
         <h1>Empresa</h1>
         <p>{empresa.cnpj}</p>
         <button onClick={(e) => handleClick(e)}> Deletar </button>
+        <a href={`/editar/aluno/${id}`}>Editar Aluno</a>
       </div>
     </>
   );

@@ -10,13 +10,7 @@ function Aluno() {
   function handleClick(event) {
     event.preventDefault();
     api
-      .delete(`/aluno/deletar/id/${id}`, {
-        headers: {
-          "Content-type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+      .delete(`/aluno/deletar/id/${id}`)
       .then(() => (window.location.href = `/`));
   }
 
@@ -30,6 +24,7 @@ function Aluno() {
         <h1>Aluno</h1>
         <p>{aluno.nome}</p>
         <button onClick={(e) => handleClick(e)}> Deletar </button>
+        <a href={`/editar/aluno/${id}`}>Editar Aluno</a>
       </div>
     </>
   );

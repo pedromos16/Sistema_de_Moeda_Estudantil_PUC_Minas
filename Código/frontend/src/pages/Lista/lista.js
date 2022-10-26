@@ -8,7 +8,7 @@ function Lista() {
   useEffect(() => {
     api.get("/aluno/listar").then((res) => setAlunos(res.data));
     api.get("/empresa/listar").then((res) => setEmpresas(res.data));
-  });
+  }, []);
 
   return (
     <>
