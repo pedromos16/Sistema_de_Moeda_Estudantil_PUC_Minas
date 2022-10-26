@@ -19,6 +19,7 @@ function Lista() {
             ? alunos.map((aluno) => (
                 <>
                   <a href={`/aluno/:${aluno.id}`}>{aluno.nome}</a>
+                  <div>{JSON.stringify(aluno)}</div>
                 </>
               ))
             : "Nao existem alunos cadastrados"}
@@ -28,7 +29,8 @@ function Lista() {
           {empresas.length > 0
             ? empresas.map((empresa) => (
                 <>
-                  <a href={`/empresa/:${empresa.id}`}>{empresa.nome}</a>
+                  <a href={`/empresa/:${empresa.id}`}>{empresa.cnpj}</a>
+                  <div>{JSON.stringify(empresa)}</div>
                 </>
               ))
             : "Nao existem empresas cadastrados"}
