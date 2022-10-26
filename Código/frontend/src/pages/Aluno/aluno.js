@@ -7,7 +7,7 @@ function Aluno() {
   const id = this.props.match.params.id;
 
   useEffect(() => {
-    api.get(`/aluno/${id}`).then((res) => setAluno(res.data));
+    api.get(`/aluno/mostrar/id/${id}`).then((res) => setAluno(res.data));
   });
 
   return (
