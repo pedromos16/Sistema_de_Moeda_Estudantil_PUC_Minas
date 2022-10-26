@@ -34,14 +34,14 @@ const Rotas = () => (
     </Routes>
     <Routes>
       <Route
-        path="/editar/aluno"
+        path="/editar/aluno/:id"
         caseSensitive={false}
         element={<EditarAluno />}
       />
     </Routes>
     <Routes>
       <Route
-        path="/editar/empresa"
+        path="/editar/empresa/:id"
         caseSensitive={false}
         element={<EditarEmpresa />}
       />
