@@ -53,4 +53,17 @@ public class AlunoService {
             throw new DataIntegrityViolationException("Não foi possivel excluir este aluno.");
         }
     }
+
+    public Aluno update(Integer id, Aluno obj) throws Exception {
+       Aluno newAluno = getById(id);
+       newAluno.setCpf(obj.getCpf());
+       newAluno.setEmail(obj.getEmail());
+       newAluno.setEndereco(obj.getEndereco());
+       newAluno.setNome(obj.getNome());
+       newAluno.setRg(obj.getRg());
+       //newAluno.setSenha(obj.getSenha());
+       newAluno.setSaldo(obj.getSaldo());
+       return repository.save(newAluno);
+    }
+    
 }

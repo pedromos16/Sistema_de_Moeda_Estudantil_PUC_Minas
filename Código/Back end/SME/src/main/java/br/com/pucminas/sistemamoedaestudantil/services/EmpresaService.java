@@ -46,4 +46,12 @@ public class EmpresaService {
             throw new DataIntegrityViolationException("Não foi possivel excluir este aluno.");
         }
     }
+
+    public Empresa update(Integer id, Empresa obj) {
+        Empresa newEmpresa = getById(id);
+        newEmpresa.setCnpj(obj.getCnpj());
+        newEmpresa.setSaldo(obj.getSaldo());
+        return repository.save(newEmpresa);
+    }
+    
 }

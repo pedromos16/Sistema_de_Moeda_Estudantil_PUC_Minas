@@ -43,4 +43,11 @@ public class AlunoController {
     public void  delete (@PathVariable Integer id) throws Exception {
         service.deleteById(id);
     }
+    
+    @PutMapping  (value = "/update/id/{id}")
+    public ResponseEntity<Aluno>  delete (@PathVariable Integer id,@RequestBody Aluno obj ) throws Exception {
+       Aluno alunoAtualizado = service.update(id,obj);
+       return ResponseEntity.ok().body(alunoAtualizado);
+        
+    }
 }
