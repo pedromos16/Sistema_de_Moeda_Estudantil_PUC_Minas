@@ -7,6 +7,13 @@ function Aluno() {
 
   const { id } = useParams();
 
+  function handleClick(event) {
+    event.preventDefault();
+    api
+      .delete(`/aluno/deletar/id/${id}`)
+      .then(() => (window.location.href = `/`));
+  }
+
   useEffect(() => {
     api.get(`/aluno/mostrar/id/${id}`).then((res) => setAluno(res.data));
   }, [id]);
@@ -16,6 +23,7 @@ function Aluno() {
       <div style={{ textAligment: "center" }}>
         <h1>Aluno</h1>
         <p>{aluno.nome}</p>
+        <button onClick={(e) => handleClick(e)}> Deletar </button>
       </div>
     </>
   );

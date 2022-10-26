@@ -7,6 +7,13 @@ function Empresa() {
 
   const { id } = useParams();
 
+  function handleClick(event) {
+    event.preventDefault();
+    api
+      .delete(`/aluno/deletar/id/${id}`)
+      .then(() => (window.location.href = `/`));
+  }
+
   useEffect(() => {
     api.get(`api/empresa/mostrar/id/${id}`).then((res) => setEmpresa(res.data));
   }, [id]);
@@ -16,6 +23,7 @@ function Empresa() {
       <div style={{ textAligment: "center" }}>
         <h1>Empresa</h1>
         <p>{empresa.cnpj}</p>
+        <button onClick={(e) => handleClick(e)}> Deletar </button>
       </div>
     </>
   );
