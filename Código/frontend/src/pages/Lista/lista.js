@@ -3,13 +3,15 @@ import api from "../../api/service";
 
 function Lista() {
   const [alunos, setAlunos] = useState([]);
-  const [professores, setProfessores] = useState([]);
+  const [empresas, setEmpresas] = useState([]);
 
   useEffect(() => {
-    api.get("/aluno").then((res) => setAlunos(res.data));
-    api.get("/professor").then((res) => setProfessores(res.data));
+    api.get("/api/aluno/listar").then((res) => setAlunos(res.data));
+    api.get("/api/empresa/listar").then((res) => setEmpresas(res.data));
   });
 
+  console.log(alunos);
+  console.log(empresas);
   return (
     <>
       <div style={{ textAligment: "center" }}>
@@ -21,11 +23,11 @@ function Lista() {
             </>
           ))}
         </div>
-        <h1>Professores</h1>
+        <h1>Empresas</h1>
         <div>
-          {professores.map((professor) => (
+          {empresas.map((empresa) => (
             <>
-              <a href={`/professor/:${professor.id}`}>{professor.nome}</a>
+              <a href={`/empresa/:${empresa.id}`}>{empresa.cnpj}</a>
             </>
           ))}
         </div>{" "}
