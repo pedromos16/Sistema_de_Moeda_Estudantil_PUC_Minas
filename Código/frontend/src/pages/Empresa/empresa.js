@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import api from "../../api/service";
 
 function Empresa() {
   const [empresa, setEmpresa] = useState({});
 
-  const id = this.props.match.params.id;
+  const { id } = useParams();
 
   useEffect(() => {
     api.get(`api/empresa/mostrar/id/${id}`).then((res) => setEmpresa(res.data));
