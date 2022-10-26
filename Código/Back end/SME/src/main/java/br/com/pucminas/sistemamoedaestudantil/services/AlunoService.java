@@ -28,10 +28,14 @@ public class AlunoService {
     }
 
     @Transactional
-    public Aluno getById(Integer id){
+    public Aluno getById(Integer id) throws Exception {
+        try{
         Optional<Aluno> obj = repository.findById(id);
         return obj.orElseThrow(()-> new ObjectNotFoundException(1,
                 "Aluno não encontrado.\n Id: " + id));
+        }catch(Exception e){
+            throw new Exception("Aluno não encontrado");
+        }
     }
 
     @Transactional
@@ -41,7 +45,7 @@ public class AlunoService {
     }
 
     @Transactional
-    public void deleteById(Integer id){
+    public void deleteById(Integer id) throws Exception {
         getById(id);
         try{
             repository.deleteById(id);

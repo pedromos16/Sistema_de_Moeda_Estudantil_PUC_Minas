@@ -28,7 +28,7 @@ public class AlunoController {
     }
 
     @GetMapping(value = "/mostrar/id/{id}")
-    public ResponseEntity<AlunoResponseDTO> show(@PathVariable Integer id) {
+    public ResponseEntity<AlunoResponseDTO> show(@PathVariable Integer id) throws Exception {
         AlunoResponseDTO obj = new AlunoResponseDTO(service.getById(id));
         return ResponseEntity.ok().body(obj);
     }
@@ -40,7 +40,7 @@ public class AlunoController {
     }
 
     @DeleteMapping  (value = "/deletar/id/{id}")
-    public void  delete (@PathVariable Integer id) {
+    public void  delete (@PathVariable Integer id) throws Exception {
         service.deleteById(id);
     }
 }
