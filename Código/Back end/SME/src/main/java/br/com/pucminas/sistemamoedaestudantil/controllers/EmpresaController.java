@@ -43,4 +43,12 @@ public class EmpresaController {
     public void  delete (@PathVariable Integer id) {
         service.deleteById(id);
     }
+    
+    @PutMapping  (value = "/update/id/{id}")
+    public ResponseEntity<Empresa>  delete (@PathVariable Integer id,@RequestBody Empresa obj ) throws Exception {
+        Empresa empresaAtualizada = service.update(id,obj);
+       return ResponseEntity.ok().body(empresaAtualizada);
+        
+    }
+
 }
