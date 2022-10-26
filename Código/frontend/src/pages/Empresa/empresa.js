@@ -15,7 +15,7 @@ function Empresa() {
   }
 
   useEffect(() => {
-    api.get(`api/empresa/mostrar/id/${id}`).then((res) => setEmpresa(res.data));
+    api.get(`/empresa/mostrar/id/${id}`).then((res) => setEmpresa(res.data));
   }, [id]);
 
   return (

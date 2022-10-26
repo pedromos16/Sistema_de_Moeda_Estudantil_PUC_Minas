@@ -10,7 +10,13 @@ function Aluno() {
   function handleClick(event) {
     event.preventDefault();
     api
-      .delete(`/aluno/deletar/id/${id}`)
+      .delete(`/aluno/deletar/id/${id}`, {
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .then(() => (window.location.href = `/`));
   }
 
