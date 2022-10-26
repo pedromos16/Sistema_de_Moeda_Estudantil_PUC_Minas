@@ -9,7 +9,7 @@ function Aluno() {
 
   useEffect(() => {
     api.get(`/aluno/mostrar/id/${id}`).then((res) => setAluno(res.data));
-  });
+  }, [id]);
 
   return (
     <>
