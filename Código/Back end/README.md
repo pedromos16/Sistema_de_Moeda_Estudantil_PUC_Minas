@@ -1,5 +1,5 @@
 # Instruções gerais para rodar o projeto localmente
-_____________________________________
+___
 
 ## Sumário
 1. Instalação da IDE
@@ -8,7 +8,7 @@ _____________________________________
 4. Rodando o projeto
 5. Endpoints da aplicação
 
-_____________________________________
+___
 
 > Antes de tudo, verifique se ao menos a versão 11 da JDK está instalada.
 
@@ -40,7 +40,8 @@ Após a instalação e aplicação da possível licença recebida na ID, é hora
 com a IDE já aberta e o repositório do projeto já no computador o processo se torna simples, caso a tela de seleção de projeto não abra automaticamente,
 basta ir até File, Open e selecionar a pasta do projeto.
 <br>
-![open project](/media/open project.gif)
+
+![open project](./media/open%20project.gif)
 ___
 
 Com o projeto aberto, basta, agora baixar as dependências do maven, que se encontram no arquivo pom.xml, logo na raiz do projeto.
@@ -49,7 +50,7 @@ Ao abrir o arquivo, as dependências irão ser baixadas automaticamente, e podem
 > Caso o download de dependências não inicie automaticamente, ao abrir o arquivo pom.xml, um ícone do maven deve aparecer no canto superior esquerdo (conforme a imagem)
 >. Ao clicar, o carregamento das dependências irá iniciar.
 
-![img.png](/media/maven.png)
+![img.png](./media/maven.png)
 
 ___
 
@@ -60,10 +61,10 @@ As variáveis de ambiente podem ser setadas tanto em um arquivo .env ou direto n
 - ### Setando variáveis nas configurações do projeto 
   - Com o projeto SpringBoot aberto, clique em SMEApplication, Edit Configurations e adicione as variáveis em Enviroment Variables
 
-![Envoriment Variables](/media/ev.gif)
+![Envoriment Variables](./media/ev.gif)
 
 >As variáveis que você irá precisar para esse projeto estão localizadas no arquivo application.properties na pasta resources.
->>![img_5.png](/media/ev_img.png)
+>>![img_5.png](./media/ev_img.png)
 > - DB_URL: URL do seu banco de dados postegre, neste caso, pode ser entendido como jdbc:postgresql://localhost:PORTA_DO_SEU_BANCO/NOME_DO_SEU_BANCO
 >   - Geralmente a porta do banco de dados postegre é a 5432.
 > - DB_USER: Usuário do postgre, geralmente o padrão é "postgres"
@@ -76,7 +77,6 @@ Para rodar o projeto, basta clicar em RUN ao lado de SMEApplication ou clicar co
 
 A porta do app está configurada como 3001, portanto irá ser hospedado em "http://localhost:3001/".
 
-___
 ___
 ## 5. Endpoints da aplicação
 
