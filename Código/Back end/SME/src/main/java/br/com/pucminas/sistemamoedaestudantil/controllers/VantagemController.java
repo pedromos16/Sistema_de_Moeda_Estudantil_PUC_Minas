@@ -1,7 +1,7 @@
 package br.com.pucminas.sistemamoedaestudantil.controllers;
 
-import br.com.pucminas.sistemamoedaestudantil.entities.Empresa;
-import br.com.pucminas.sistemamoedaestudantil.services.EmpresaService;
+import br.com.pucminas.sistemamoedaestudantil.entities.Vantagem;
+import br.com.pucminas.sistemamoedaestudantil.services.VantagemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,28 +11,28 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(path = "/api/empresa")
-public class EmpresaController {
+@RequestMapping(path = "/api/vantagem")
+public class VantagemController {
 
     @Autowired
-    EmpresaService service;
+    VantagemService service;
 
     @GetMapping(value = "/listar")
     public ResponseEntity listar(){
-        List<Empresa> list = service.findAll();
+        List<Vantagem> list = service.findAll();
         if (list.isEmpty())
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Nenhum colaborador encontrado.");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Nenhuma vantagem encontrada.");
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/mostrar/id/{id}")
-    public ResponseEntity<Empresa> show(@PathVariable Integer id) {
-        Empresa obj = service.getById(id);
+    public ResponseEntity<Vantagem> show(@PathVariable Integer id) {
+        Vantagem obj = service.getById(id);
         return ResponseEntity.ok().body(obj);
     }
 
     @PostMapping(value = "/cadastrar")
-    public ResponseEntity insert (@RequestBody Empresa dto) {
+    public ResponseEntity insert (@RequestBody Vantagem dto) {
         ResponseEntity resp = service.insert(dto);
         return resp;
     }
@@ -43,9 +43,9 @@ public class EmpresaController {
     }
     
     @PutMapping  (value = "/update/id/{id}")
-    public ResponseEntity<Empresa>  delete (@PathVariable Integer id,@RequestBody Empresa obj ) throws Exception {
-        Empresa empresaAtualizada = service.update(id,obj);
-       return ResponseEntity.ok().body(empresaAtualizada);
+    public ResponseEntity<Vantagem>  delete (@PathVariable Integer id,@RequestBody Vantagem obj ) throws Exception {
+        Vantagem vantagemAtualizada = service.update(id,obj);
+       return ResponseEntity.ok().body(vantagemAtualizada);
         
     }
 
